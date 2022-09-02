@@ -652,7 +652,9 @@ console.log(allPlayers); // logs ['Neuer', 'Pavard', 'Martinez', 'Alaba', 'Davie
 const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
 console.log(players1Final); // logs ['Neuer', 'Pavard', 'Martinez', 'Alaba', 'Davies', 'Kimmich', 'Goretzka', 'Coman', 'Muller', 'Gnarby', 'Lewandowski', 'Thiago', 'Coutinho', 'Perisic']
 
-
+// #5 
+const {odds: {team1, x: draw, team2}} = game;
+console.log(team1, draw, team2); // logs 1.33 3.25 6.5
 
 /*
 // 1.
