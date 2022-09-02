@@ -639,6 +639,10 @@ const [players1, players2] = game.players;
 console.log(players1); // logs ['Neuer', 'Pavard', 'Martinez', 'Alaba', 'Davies', 'Kimmich', 'Goretzka', 'Coman', 'Muller', 'Gnarby', 'Lewandowski']
 console.log(players2); // logs ['Burki', 'Schulz', 'Hummels', 'Akanji', 'Hakimi', 'Weigl', 'Witsel', 'Hazard', 'Brandt', 'Sancho', 'Gotze']
  
+// #2
+const [gk, ...fieldPlayers] = players1;
+console.log(gk); // logs Neuer
+console.log(fieldPlayers); // logs ['Pavard', 'Martinez', 'Alaba', 'Davies', 'Kimmich', 'Goretzka', 'Coman', 'Muller', 'Gnarby', 'Lewandowski']
 
 /*
 // 1.
