@@ -663,6 +663,10 @@ const printGoals = function(...players) {
 };
 printGoals('Lewandowski', 'Lewandowski', 'Muller'); // logs ['Lewandowski', 'Lewandowski', 'Muller'] 3 goals were scored
 
+// # 7
+team1 < team2 && console.log("Bayern Munich is more likely to win");
+team1 > team2 && console.log("Borussia Dortmund is more likely to win");
+
 /*
 // 1.
 const [players1, players2] = game.players;
