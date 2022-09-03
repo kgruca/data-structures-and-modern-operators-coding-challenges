@@ -656,6 +656,13 @@ console.log(players1Final); // logs ['Neuer', 'Pavard', 'Martinez', 'Alaba', 'Da
 const {odds: {team1, x: draw, team2}} = game;
 console.log(team1, draw, team2); // logs 1.33 3.25 6.5
 
+// #6
+const printGoals = function(...players) {
+  console.log(players);
+  console.log(`${players.length} goals were scored`);
+};
+printGoals('Lewandowski', 'Lewandowski', 'Muller'); // logs ['Lewandowski', 'Lewandowski', 'Muller'] 3 goals were scored
+
 /*
 // 1.
 const [players1, players2] = game.players;
