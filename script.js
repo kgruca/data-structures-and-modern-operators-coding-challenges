@@ -511,20 +511,21 @@ const game = {
 
 
 // Coding Challenge 2, 1.
-for (const goalscorer of game.scored.entries()) console.log(`Goal ${goalscorer[0] + 1}: ${goalscorer[1]}`);
+for (const [i, goalscorer] of game.scored.entries()) console.log(`Goal ${i + 1}: ${goalscorer}`);
 // logs Goal 1: Lewandowski Goal 2: Gnarby Goal 3: Lewandowski Goal 4: Hummels
 // 2.
-let total = 0;
+let avg = 0;
 const values = Object.values(game.odds)
-for (const value of values) total += value;
-const avg = total / values.length;
+for (const value of values) avg += value;
+avg /= values.length;
 console.log(avg);
 // logs 3.6933333333333334
 // 3.
-for (const value of values) {
-  console.log(`Odd of victory ${game.team1}: ${value}`);
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr}: ${odd}`);
 }
-// logs 
+// logs Odd of victory Bayern Munich: 1.33 Odd of draw: 3.25 Odd of victory Borrussia Dortmund: 6.5
 
 
 /*
