@@ -509,8 +509,26 @@ const game = {
   },
 };
 
+
+// Coding Challenge 2, 1.
+for (const goalscorer of game.scored.entries()) console.log(`Goal ${goalscorer[0] + 1}: ${goalscorer[1]}`);
+// logs Goal 1: Lewandowski Goal 2: Gnarby Goal 3: Lewandowski Goal 4: Hummels
+// 2.
+let total = 0;
+const values = Object.values(game.odds)
+for (const value of values) total += value;
+const avg = total / values.length;
+console.log(avg);
+// logs 3.6933333333333334
+// 3.
+for (const value of values) {
+  console.log(`Odd of victory ${game.team1}: ${value}`);
+}
+// logs 
+
+
 /*
-// 1.
+// Coding Challenge 1, 1.
 for (const [i, player] of game.scored.entries())
   console.log(`Goal ${i + 1}: ${player}`);
 
