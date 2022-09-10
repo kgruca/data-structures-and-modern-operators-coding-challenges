@@ -313,11 +313,30 @@ const gameEvents = new Map([
 
 // 1.
 const events = [...new Set(gameEvents.values())];
-console.log(events);
+console.log(events); // logs ['⚽️ GOAL', '🔁 Substitution', '🔶 Yellow card', '🔴 Red card']
 
 // 2.
 gameEvents.delete(64);
-console.log(gameEvents);
+console.log(gameEvents); // logs Map(10) {17 => '⚽️ GOAL', 36 => '🔁 Substitution', 47 => '⚽️ GOAL', 61 => '🔁 Substitution', 69 => '🔴 Red card', …}
+
+// 3.
+console.log(`An event happened, on average, every ${90 / gameEvents.size} minutes`); // logs An event happened, on average, every 9 minutes
+
+// 4.
+for (const [key, value] of gameEvents) {
+  const half = key <= 45 ? '[FIRST HALF]' : '[SECOND HALF]';
+  console.log(`${half} ${key}: ${value}`);
+}
+// logs [FIRST HALF] 17: ⚽️ GOAL
+// [FIRST HALF] 36: 🔁 Substitution
+// [SECOND HALF] 47: ⚽️ GOAL
+// [SECOND HALF] 61: 🔁 Substitution
+// [SECOND HALF] 69: 🔴 Red card
+// [SECOND HALF] 70: 🔁 Substitution
+// [SECOND HALF] 72: 🔁 Substitution
+// [SECOND HALF] 76: ⚽️ GOAL
+// [SECOND HALF] 80: ⚽️ GOAL
+// [SECOND HALF] 92: 🔶 Yellow card
 
 /*
 // 1.
