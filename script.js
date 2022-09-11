@@ -1,5 +1,6 @@
 'use strict';
 
+/*
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 const openingHours = {
   [weekdays[3]]: {
@@ -69,6 +70,7 @@ for (const flight of flights.split('+')) {
   )} ${getCode(from)} ${getCode(to)} (${time.replace(':', 'h')})`.padStart(36);
   console.log(output);
 }
+*/
 
 ///////////////////////////////////////
 // Coding Challenge #4
@@ -102,25 +104,32 @@ Afterwards, test with your own test data!
 GOOD LUCK 😀
 */
 
-/*
+// Coding Challenge #4
 document.body.append(document.createElement('textarea'));
 document.body.append(document.createElement('button'));
 
-document.querySelector('button').addEventListener('click', function () {
+document.querySelector('button').addEventListener('click', function() {
   const text = document.querySelector('textarea').value;
-  const rows = text.split('\n');
+  const textArr = text.split('\n');
+  const correctedTextArr = [];
+  let maxLen = 0;
 
-  for (const [i, row] of rows.entries()) {
-    const [first, second] = row.toLowerCase().trim().split('_');
+  for (const val of textArr){
+    const valLower = val.toLowerCase().trim();
+    const newValArr = valLower.split('_');
+    const newVal = newValArr[0] + newValArr[1].slice(0, 1).toUpperCase() + newValArr[1].slice(1);
+    correctedTextArr.push(newVal);
+    const newValLen = newVal.length;
+    maxLen = maxLen <= newValLen ? newValLen + 2: maxLen;
+  }
 
-    const output = `${first}${second.replace(
-      second[0],
-      second[0].toUpperCase()
-    )}`;
-    console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
+  for (const [key, val] of correctedTextArr.entries()) {
+    const newVal = val.padEnd(maxLen, ' ') + `${'✅'.repeat(key + 1)}`;
+    console.log(newVal);
   }
 });
-*/
+
+
 
 /*
 ///////////////////////////////////////
@@ -296,7 +305,7 @@ Let's continue with our football betting app! This time, we have a map with a lo
 
 GOOD LUCK 😀
 */
-
+/*
 const gameEvents = new Map([
   [17, '⚽️ GOAL'],
   [36, '🔁 Substitution'],
@@ -327,6 +336,7 @@ for (const [key, value] of gameEvents) {
   const half = key <= 45 ? '[FIRST HALF]' : '[SECOND HALF]';
   console.log(`${half} ${key}: ${value}`);
 }
+*/
 // logs [FIRST HALF] 17: ⚽️ GOAL
 // [FIRST HALF] 36: 🔁 Substitution
 // [SECOND HALF] 47: ⚽️ GOAL
@@ -495,6 +505,7 @@ BONUS: Create an object called 'scorers' which contains the names of the players
 GOOD LUCK 😀
 */
 
+/*
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -553,6 +564,7 @@ for (const [team, odd] of Object.entries(game.odds)) {
   console.log(`Odd of ${teamStr}: ${odd}`);
 }
 // logs Odd of victory Bayern Munich: 1.33 Odd of draw: 3.25 Odd of victory Borrussia Dortmund: 6.5
+*/
 
 
 /*
@@ -680,6 +692,7 @@ TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Th
 GOOD LUCK 😀
 */
 
+/*
 // #1
 const [players1, players2] = game.players;
 console.log(players1); // logs ['Neuer', 'Pavard', 'Martinez', 'Alaba', 'Davies', 'Kimmich', 'Goretzka', 'Coman', 'Muller', 'Gnarby', 'Lewandowski']
@@ -712,6 +725,7 @@ printGoals('Lewandowski', 'Lewandowski', 'Muller'); // logs ['Lewandowski', 'Lew
 // # 7
 team1 < team2 && console.log("Bayern Munich is more likely to win");
 team1 > team2 && console.log("Borussia Dortmund is more likely to win");
+*/
 
 /*
 // 1.
