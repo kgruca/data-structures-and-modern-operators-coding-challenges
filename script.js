@@ -105,6 +105,8 @@ GOOD LUCK 😀
 */
 
 // Coding Challenge #4
+// my solution:
+/*
 document.body.append(document.createElement('textarea'));
 document.body.append(document.createElement('button'));
 
@@ -120,12 +122,29 @@ document.querySelector('button').addEventListener('click', function() {
     const newVal = newValArr[0] + newValArr[1].slice(0, 1).toUpperCase() + newValArr[1].slice(1);
     correctedTextArr.push(newVal);
     const newValLen = newVal.length;
-    maxLen = maxLen <= newValLen ? newValLen + 2: maxLen;
+    maxLen = maxLen < newValLen ? newValLen : maxLen;
   }
 
   for (const [key, val] of correctedTextArr.entries()) {
-    const newVal = val.padEnd(maxLen, ' ') + `${'✅'.repeat(key + 1)}`;
+    const newVal = val.padEnd(maxLen + 5, ' ') + `${'✅'.repeat(key + 1)}`;
     console.log(newVal);
+  }
+});
+*/
+
+// video solution
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  const rows = text.split('\n');
+  console.log(rows);
+
+  for (const [key, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split('_');
+    const output = `${first}${second.replace(second[0], second[0].toUpperCase())}`;
+    console.log(`${output.padEnd(20)}${'✅'.repeat(key + 1)}`);
   }
 });
 
